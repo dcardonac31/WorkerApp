@@ -1,5 +1,5 @@
 <?php
-    
+    include_once 'conexion.php';
     $sql = "SELECT
     s.DescripcionServicio,
     t.NombrePersona,
@@ -36,10 +36,13 @@
         // output data of each row
         while ($row = $result->fetch_assoc()) {
           echo "<div class='car' style='width: 18rem;'>
-          <img src=$row[LogoEmpresa] class='card-img-top' alt='...'>
+          <img src=$row[LogoEmpresa] class='card-img-top' alt='Logo' height='250px' width='150px'>
           <div class='card-body'>
             <h5 class='card-title'>$row[NombrePersona]</h5>
             <h6 class='card-title'>$row[NombreEmpresa]</h6>
+            <a href=$row[Whatsapp] target='_blank'>
+            <img src='images/whatsapp.png' alt='Whatsapp' target='_blank' style='width:42px;height:42px;'>
+            </a>
             <p class='card-text'>$row[DescripcionServicio]</p>
             <a href='#' class='btn btn-primary'>Consultar</a>
           </div>

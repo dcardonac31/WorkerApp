@@ -61,10 +61,10 @@ if(isset($_POST['submit']))
                 '$email',
                 '$celular',
                 '$telefonoFijo',
-                '$whatsapp',
+                'https://api.whatsapp.com/send?phone='+'$whatsapp',
                 '$sitioWeb',
-                '$instagram',
-                '$facebook',
+                'https://www.instagram.com/'+'$instagram',
+                'https://www.facebook.com/'+'$facebook',
                 '$logoEmpresa',
                 '$imagen1',
                 '$imagen2', 
@@ -80,6 +80,7 @@ if(isset($_POST['submit']))
         echo "Sql: ".$sql;
      if (mysqli_query($conn, $sql)) {
         echo "Nuevo registro éxitoso de trabajador !";
+        header("Refresh:0; url=view_insertar.php");
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }

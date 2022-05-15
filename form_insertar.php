@@ -54,7 +54,7 @@
     </div>
     <div class="form-group">
         <label for="whatsapp">Whatsapp</label>
-        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="+571234357890">
+        <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="571234357890">
     </div>
     <div class="form-group">
         <label for="sitioWeb">Sitio web</label>

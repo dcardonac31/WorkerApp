@@ -34,9 +34,9 @@ include 'conexion.php';
 </nav>
     <div class="container">
         <div class="row">
-            <h3>Consultar Servicios</h3>
+            <h3>Consulta Trabajador</h3>
             <?php
-            include 'consultar_servicio.php';
+            include 'consultar_trabajador_por_servicio.php';
             ?>
         </div>
     </div>
