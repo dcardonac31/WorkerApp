@@ -8,6 +8,7 @@
     {
       $idServicio = mysqli_real_escape_string($conn, $_GET['idServicio']);
       $sql = "SELECT
+      t.Id AS IdTrabajador,
       s.DescripcionServicio,
       t.NombrePersona,
       t.NombreEmpresa,
@@ -55,7 +56,7 @@
               <img src='images/whatsapp.png' alt='Whatsapp' target='_blank' style='width:42px;height:42px;'>
               </a>
               <p class='card-text'>$row[DescripcionServicio]</p>
-              <a href='#' class='btn btn-primary'>Consultar</a>
+              <a href='view_consultar_trabajador.php?idTrabajador=$row[IdTrabajador]' class='btn btn-primary'>Consultar</a>
             </div>
           </div>";
           }
@@ -63,10 +64,4 @@
           echo "0 results";
       }
     }
-
-
-
-
-
-
-
+?>
