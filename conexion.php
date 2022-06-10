@@ -1,8 +1,8 @@
 <?php
-    $db_hosting = "127.0.0.1";
-    $db_user = "root";
-    $db_pass = "";
-    $db_namedb = "db_workerapp";
+    $db_hosting = "localhost";
+    $db_user = "id18968424_root";
+    $db_pass = "WorkerApp*123";
+    $db_namedb = "id18968424_db_workerap";
 
     // Create connection
     $conn = mysqli_connect($db_hosting, $db_user, $db_pass, $db_namedb);

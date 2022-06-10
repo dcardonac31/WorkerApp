@@ -4,11 +4,13 @@
             <label class="input-group-text" for="servicioId">Servicios</label>
         </div>
         <select class="custom-select" id="servicioId" name="servicioId">
-            <option selected>Seleccione servicio...</option>
-            <option value="1">Albañil</option>
-            <option value="2">Cerrajero</option>
-            <option value="3">Electricista</option>
-            <option value="3">Plomero</option>
+        <option value="0">Seleccione servicio:</option>
+        <?php
+          $query = $conn -> query ("SELECT * FROM servicio");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo "'<option value=$valores[Id]>$valores[DescripcionServicio]</option>'";
+          }
+        ?>
         </select>
     </div>
     <div class="form-group">
@@ -30,10 +32,13 @@
             <label class="input-group-text" for="ciudadId">Ciudad</label>
         </div>
         <select class="custom-select" id="ciudadId" name="ciudadId">
-            <option selected>Seleccione ciudad...</option>
-            <option value="05001">Medellín</option>
-            <option value="05266">Envigado</option>
-            <option value="05631">Sabaneta</option>
+        <option value="0">Seleccione ciudad:</option>
+        <?php
+          $query = $conn -> query ("SELECT * FROM ciudad");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo "'<option value=$valores[Id]>$valores[Ciudad]</option>'";
+          }
+        ?>
         </select>
     </div>
     <div class="form-group">
@@ -49,7 +54,7 @@
         <input type="text" class="form-control" id="celular" name="celular" placeholder="+571234357890">
     </div>
     <div class="form-group">
-        <label for="telefonoFijo">Celular</label>
+        <label for="telefonoFijo">Telefono Fijo</label>
         <input type="text" class="form-control" id="telefonoFijo" name="telefonoFijo" placeholder="6041234567">
     </div>
     <div class="form-group">

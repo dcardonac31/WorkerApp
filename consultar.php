@@ -1,10 +1,13 @@
 <?php
     include_once 'conexion.php';
     $sql = "SELECT
+    t.Id,
     s.DescripcionServicio,
     t.NombrePersona,
     t.NombreEmpresa,
+    t.ServicioId,
     t.DescripcionServicio,
+    t.CiudadId,
     c.Ciudad,
     t.Direccion,
     t.Email,
@@ -31,11 +34,21 @@
     ON t.CiudadId = c.Ciudad;";
 
     $result = $conn->query($sql);
+    
 
     if ($result->num_rows > 0) {
+      
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-          echo "<div class='car' style='width: 18rem;'>
+          echo "
+          <script>
+            function confirmDelete(url) {
+            if (confirm('¿Esta seguro de eliminar el trabajador?')) {
+              document.location = url;
+            }
+          }
+        </script>
+          <div class='car' style='width: 18rem;'>
           <img src=$row[LogoEmpresa] class='card-img-top' alt='Logo' height='250px' width='150px'>
           <div class='card-body'>
             <h5 class='card-title'>$row[NombrePersona]</h5>
@@ -44,10 +57,17 @@
             <img src='images/whatsapp.png' alt='Whatsapp' target='_blank' style='width:42px;height:42px;'>
             </a>
             <p class='card-text'>$row[DescripcionServicio]</p>
-            <a href='#' class='btn btn-primary'>Consultar</a>
+            <a href='view_consultar_trabajador.php?idTrabajador=$row[Id]' class='btn btn-primary'>Consultar</a>
+            <br>
+            <br>
+            <a href='view_update.php?idTrabajador=$row[Id]' class='btn btn-success'>Actualizar</a>
+            <br>
+            <br>
+            <a href=javascript:confirmDelete('delete.php?idTrabajador=$row[Id]') class='btn btn-danger'>Eliminar</a>
           </div>
         </div>";
         }
     } else {
         echo "0 results";
     }
+   ?> 

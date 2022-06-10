@@ -1,47 +1,93 @@
-<?php
-include 'conexion.php';
-?>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!---*************welcome this is my simple empty strap by John Niro Yumang ******************* -->
+
 <!DOCTYPE html>
 <html lang="en">
 
+<title>Sign up WorkerApp</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorkerApp</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="jquery/jquery.min.js"></script>
+  <!---- jquery link local dont forget to place this in first than other script or link or may not work ---->
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!---- boostrap.min link local ----->
+
+  <link rel="stylesheet" href="css/style.css">
+  <!---- boostrap.min link local ----->
+
+  <script src="js/bootstrap.min.js"></script>
+  <!---- Boostrap js link local ----->
+
+  <link rel="icon" href="images/icon.png" type="image/x-icon" />
+  <!---- Icon link local ----->
+
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <!---- Font awesom link local ----->
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">WorkerApp</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Home</a></li>
-      <li><a href="view_insertar.php">insertar</a></li>
-      <li><a href="view_consultar.php">Consultar</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
     <div class="container">
-        <div class="row">
-            <h3>Consultar Servicios</h3>
-            <?php
-            include 'consultar_servicio.php';
-            ?>
+      <img src="./images/workerApp_white.png" alt="logo" width="250px">
+      <hr>
+      <div class="row">
+        <div class="col-md-5">
+          <form role="form" method="post" action="insert_user.php">
+            <fieldset>
+              <p class="text-uppercase pull-center">Registro de nuevo usuario</p>
+              <div class="form-group">
+                <input type="number" name="documentId" id="documentId" class="form-control input-lg" placeholder="123456789" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Jhon Doe" required>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="user@mail.com" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>
+              </div>
+              <div>
+                <input type="submit" class="btn btn-primary" name="submit" value="Enviar">
+              </div>
+            </fieldset>
+          </form>
         </div>
+
+        <div class="col-md-2">
+          <!-------null------>
+        </div>
+
+        <div class="col-md-5">
+        <form role="form" method="post" action="login_user.php">
+            <fieldset>
+              <p class="text-uppercase">Inicio de de sesión</p>
+
+              <div class="form-group">
+                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="user@mail.com" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>
+              </div>
+              <div>
+                <input type="submit" class="btn btn-md" value="Sign In">
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 
 </html>

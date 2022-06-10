@@ -19,16 +19,15 @@ include 'conexion.php';
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">WorkerApp</a>
+    <img src="./images/workerApp_black.png" alt="logo" width="350px">
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Home</a></li>
-      <li><a href="view_insertar.php">insertar</a></li>
+      <li class="active"><a href="home.php">Home</a></li>
+      <li><a href="view_insertar.php">Insertar</a></li>
       <li><a href="view_consultar.php">Consultar</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <ul class="nav navbar-nav">
+      <li><a href="close_session.php">Cerrar sesión</a></li>
     </ul>
   </div>
 </nav>

@@ -33,15 +33,9 @@ include 'conexion.php';
 </nav>
     <div class="container">
         <div class="row">
-            <h3>Insertar Servicios</h3>
+            <h3>Actualizar Servicios</h3>
             <?php
-            include 'form_insertar.php';
-            ?>
-        </div>
-        <div class="row">
-            <h3>Consulta Trabajador</h3>
-            <?php
-            include 'consultar.php';
+            include 'form_update.php';
             ?>
         </div>
     </div>
